@@ -121,11 +121,11 @@ logo ="""
 
 
 \033[1;97m╭──────────•◈•──────────╮
-\033[1;37m[-] TOOLS     :\031[1;32m RANDOM CLONING
-\033[1;37m[-] VERSION   :\031[1;32m V.1
-\033[1;37m[-] AUTHOR    :\030[1;32m ABU RAHIAN ANTO
-\033[1;37m[-] GITHUB    :\0331[1;32m FOX-AR
-\033[1;37m[-] TEAM      :\034[1;32m TERMUX & SPAMMING ZONE [TSZ]   
+\033[1;37m[-] AUTHOR     :\031[1;32m ABU RAHIAN ANTO
+\033[1;37m[-] TEAM   :\031[1;32m TERMUX & SPAMMING ZONE [TSZ]   
+\033[1;37m[-] GITHUB    :\030[1;32m FOX-AR
+\033[1;37m[-] TOOLS    :\0331[1;32m RANDOM CLONING
+\033[1;37m[-] VERSION      :\034[1;32m V.1.0.0   
 \033[1;97m╰──────────•◈•──────────╯
 \033[1;96m::♧♧♧♧♧♧♧♧♧♧\033[1;95mWhatsapp\033[1;96m♧♧♧♧♧♧♧♧♧♧▒▒▒▒▒▒▒::::        
 \033[1;91m:》》》\033[1;97m+8801972239643\033[1;91m《《《▒▒▒▒▒▒▒▒▒▒▒:::::
